@@ -13,3 +13,5 @@ This allocator is used for general purpose allocations of objects. One dlmalloc 
 
 Virtual memory:
 All the above allocators fully support virtual memory and memory is requested from the OS at page granularity. Also, the system level functions used to allocate virtual memory can easily be changes based on flags to port it to a different OS (currently only system calls for Windows are added).
+
+Please report any bugs discovered.
