@@ -1,0 +1,5 @@
+Copyright (C) 2015 Rahul Gollarahalli <gollarah@usc.edu>
+
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION:
+
+You are free to use this in any way you like for other open source or commercial projects.

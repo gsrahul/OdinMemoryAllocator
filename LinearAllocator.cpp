@@ -23,6 +23,7 @@ namespace Odin
 			mStart = static_cast<uint8*>(SysAlloc::reserveCommitSegment(size));
 			if (!mStart)
 				return false;
+			mCurrent = mStart;
 		}
 		return true;
 	}
@@ -67,8 +68,8 @@ namespace Odin
 		*(reinterpret_cast<size_t*>(user_ptr)) = size;
 		user_ptr += sizeof(size_t);
 
-		// Make sure the pointer to be returned confirms to the requestedd alignment
-		ASSERT_ERROR((reinterpret_cast<size_t>(user_ptr)& (alignment - 1) == 0),
+		// Make sure the pointer to be returned confirms to the requested alignment
+		ASSERT_ERROR(((reinterpret_cast<size_t>(user_ptr) & (alignment - 1)) == 0),
 			"Pointer to be returned is not %d aligned", alignment);
 
 		return static_cast<void*>(user_ptr);

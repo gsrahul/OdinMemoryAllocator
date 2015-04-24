@@ -42,7 +42,7 @@ namespace Odin
 		virtual size_t getTotalAllocated();
 
 		// Function to clear all the allocated memory
-		inline void reset(void);
+		void reset(void);
 	private:
 		// The total size of memory Space
 		size_t mSize;

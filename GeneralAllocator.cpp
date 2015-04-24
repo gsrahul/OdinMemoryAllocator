@@ -2,8 +2,7 @@
 
 namespace Odin
 {
-	GeneralAllocator::GeneralAllocator(void* baseSegment,
-		size_t initialSize,
+	GeneralAllocator::GeneralAllocator(size_t initialSize,
 		size_t page_size,
 		size_t segment_granularity,
 		size_t segment_threshold)

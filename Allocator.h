@@ -4,6 +4,9 @@
 #include <new>
 #include "DataTypes.h"
 
+// Just hardcode this for now to 4kB
+#define PAGE_SIZE	65536
+
 namespace Odin
 {
 	class Allocator

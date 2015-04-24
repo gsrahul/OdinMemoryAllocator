@@ -12,8 +12,7 @@ namespace Odin
 	class GeneralAllocator : public Allocator
 	{
 	public:
-		explicit GeneralAllocator(void* baseSegment,
-			size_t initialSize,
+		explicit GeneralAllocator(size_t initialSize,
 			size_t page_size,
 			size_t segment_granularity,
 			size_t segment_threshold);

@@ -36,15 +36,18 @@ namespace Odin
 		__pragma(warning(push))\
 		__pragma(warning(disable: 4127))\
 		do\
-				{\
+		{\
 			static bool _ignore = false; \
 			if (_ignore || ignoreAllAsserts()); \
-						else\
-					{\
-				if (handleAssert(__FILE__, __LINE__, __FUNCTION__, #expression, level, _ignore, __VA_ARGS__) == AssertAction::ASSERT_ACTION_BREAK)\
-					ODIN_DEBUG_BREAK; \
-					}\
-				} while (false)\
+			else\
+			{\
+				if(!(expression)) \
+				{\
+					if (handleAssert(__FILE__, __LINE__, __FUNCTION__, #expression, level, _ignore, __VA_ARGS__) == AssertAction::ASSERT_ACTION_BREAK)\
+						ODIN_DEBUG_BREAK; \
+				}\
+			}\
+		} while (false)\
 		__pragma(warning(pop))
 
 #else

@@ -18,7 +18,7 @@ namespace Odin
 		aligned_ptr -= offset;
 
 		// Initialize the memory pool
-		size_t element_count = ((size - (aligned_ptr - start)) / final_element_size) - 1;
+		size_t element_count = ((size - (aligned_ptr - static_cast<uint8*>(start))) / final_element_size) - 1;
 		for (size_t element_index = 0; element_index < element_count; ++element_index)
 		{
 			uint8* curr_element = static_cast<uint8*>(aligned_ptr)+(element_index * final_element_size);
