@@ -2,6 +2,7 @@ This memory allocator is part of a game engine named Odin which I am working on 
 
 Design:
 There are three different types of allocators derived from a common Allocator base class:
+
 1) Linear Allocator
 Used for allocations that last the entire lifetime of the application. Can also be used as a Frame allocator for allocations lasting only one frame.
 
