@@ -11,6 +11,7 @@ Used for multiple allocations of the same type.
 
 3) General purpose Allocator
 This allocator is used for general purpose allocations of objects. One dlmalloc instance for allocations larger than 256 bytes and 20 dlmalloc instances covering allocations at every 8 byte size interval less than 64 bytes and every 16 byte interval between 64 and 256 bytes.  The instance for large allocations uses a 32 megabyte segment size and 64 kilobyte pages whereas the small allocation instances use 64 kilobyte segments. These dlmalloc instances aggressively return memory to the system when any instance or a segment of an instance is not being used. This design is based on the F.E.A.R 3 memory allocator. I wrote the dlmalloc from scratch so as to get rid of all the macros and also thought it would be a great way of understanding it better.
+
 Note: This allocator can be modified to use just a single dlmalloc instance if necessary. Having so many instances was just a design decision and I haven't tested the performance difference in an actual game.
 
 MemoryArena:
