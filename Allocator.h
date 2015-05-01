@@ -127,11 +127,11 @@ namespace Odin
 	
 	// Specify count at compile time (eg: int32[4])						   
 #define NEW_ARRAY_2(type, allocator) NewArray<TypeCount<type>::Type>(allocator,\
-								 TypeCount<type>::count, __FILE__, __LINE__, __FUNCTION__/*,\
+								 TypeCount<type>::count, __FILE__, __LINE__, __FUNCTION__)/*,\
 								IntToType<IsPOD<TypeCount<type>::Type>::value>() )*/
 	// Specify count at run time
 #define NEW_ARRAY_3(type, count, allocator) NewArray<type>(allocator,\
-								count, __FILE__, __LINE__, __FUNCTION__/*,\
+								count, __FILE__, __LINE__, __FUNCTION__)/*,\
 								IntToType<IsPOD<type>::value>() )*/
 	/*
 		Only the following macros should be used to allocate and delete memory
